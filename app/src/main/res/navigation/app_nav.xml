@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        tools:layout="@layout/screen_splash"
+        android:id="@+id/splashScreen"
+        android:name="uz.gita.mg.presentetion.ui.screens.SplashScreen"
+        android:label="SplashScreen" >
+        <action
+            android:id="@+id/action_splashScreen_to_menuScreen"
+            app:destination="@id/menuScreen" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/screen_menu"
+        android:id="@+id/menuScreen"
+        android:name="uz.gita.mg.presentetion.ui.screens.MenuScreen"
+        android:label="MenuScreen" >
+        <action
+            android:id="@+id/action_menuScreen_to_gameScreen"
+            app:destination="@id/gameScreen" />
+
+    </fragment>
+    <fragment
+        tools:layout="@layout/screen_game"
+        android:id="@+id/gameScreen"
+        android:name="uz.gita.mg.presentetion.ui.screens.GameScreen"
+        android:label="GameScreen" >
+        <argument
+            android:name="level"
+            android:defaultValue="EASY"
+            app:argType="uz.gita.mg.data.model.LevelEnum" />
+    </fragment>
+    <argument
+        android:name="level"
+        app:argType="uz.gita.mg.data.model.LevelEnum"
+        android:defaultValue="EASY"
+        />
+
+</navigation>
